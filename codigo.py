@@ -51,4 +51,22 @@ print("El circuito ha sido resuelto por el método corriente de mallas.")
 print("Las corrientes obtenidas son:")
 print(f"I1 (malla 1,corriente a través de R1, R2, y R3)-> {round(matriz_corrientes[0, 0], 1)}")
 print(f"I2 (malla 2, corriente a través de R2, R4, y R5) -> {round(matriz_corrientes[0, 1], 2)}")
-print(f"I3 -> {round(matriz_corrientes[0, 2], 3)}")
+print(f"I3 (malla 3, corriente a través de R3, R5, y R6)-> {round(matriz_corrientes[0, 2], 3)}")
+# Imprimir los resultados de manera más explicativa
+print("El circuito ha sido resuelto por el método corriente de mallas.")
+print("Las corrientes obtenidas son:")
+print(f"I1 (malla 1,corriente a través de R1, R2, y R3)-> {matriz_corrientes[0, 0]}")
+print(f"I2 (malla 2, corriente a través de R2, R4, y R5) -> {matriz_corrientes[0, 1]}")
+print(f"I3 (malla 3, corriente a través de R3, R5, y R6)-> {matriz_corrientes[0, 2]}")
+
+print("Los voltajes de cada resistencia son:")
+I1=matriz_corrientes[0,0]
+I2=-matriz_corrientes[0,1]
+I3=matriz_corrientes[0,2]
+
+print(f"Voltaje Resistencia 1 -> {I1*R1}")
+print(f"Voltaje Resistencia 2 ->{(I1-I2)*R2}")
+print(f"Voltaje Resistencia 3 ->{(I1-I3)*R3}")
+print(f"Voltaje Resistencia 4 ->{I2*R4}")
+print(f"Voltaje Resistencia 5 ->{(I2-I3)*R5}")
+print(f"Voltaje Resistencia 3 ->{(I3)*R6}")
